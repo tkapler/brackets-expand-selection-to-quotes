@@ -14,7 +14,7 @@ define(function(require,exports,module){
         var begin = line.substring(0,pos.ch),
             end   = line.substr(pos.ch),
             s     = begin.lastIndexOf("'"),
-            d     = end.indexOf('"');
+            d     = begin.lastIndexOf('"');
         begin = s > d ? s : d;
         end   = s > d ? end.indexOf("'"): end.indexOf('"');
         editor.setSelection({
@@ -33,5 +33,5 @@ define(function(require,exports,module){
         CMD_SELECT_TO_QUOTES,
         selectBetweenQutoes
     );
-    KeyBindingManager.addBinding(CMD_SELECT_TO_QUOTES,"Ctrl-'");
+    KeyBindingManager.addBinding(CMD_SELECT_TO_QUOTES,"Ctrl-.");
 });
